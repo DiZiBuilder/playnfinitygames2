@@ -1,12 +1,84 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useNavigate } from "react-router-dom";
+import { Play, ArrowRight, Gamepad2, Users, Heart } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 const Index = () => {
+  const navigate = useNavigate();
+
+  const stats = [
+    { icon: Gamepad2, value: "1.2K", label: "Plays Today" },
+    { icon: Users, value: "324", label: "Active Now" },
+    { icon: Heart, value: "8.4K", label: "Likes" },
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background flex flex-col">
+      {/* Hero Section */}
+      <div className="relative flex-1 flex flex-col items-center justify-center px-6 pb-24">
+        {/* Background gradient */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px]" />
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 text-center max-w-lg mx-auto">
+          {/* Logo */}
+          <div className="mb-6 inline-flex items-center justify-center">
+            <div className="w-16 h-16 rounded-2xl gradient-primary flex items-center justify-center glow-primary-intense animate-float">
+              <span className="font-display text-3xl font-bold text-white">P</span>
+            </div>
+          </div>
+          
+          {/* Headline */}
+          <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4 leading-tight">
+            <span className="text-primary text-glow">Playnfinity</span>
+            <span className="text-foreground"> — Play. Scroll.</span>
+            <br />
+            <span className="text-foreground">Play some more.</span>
+          </h1>
+          
+          <p className="text-muted-foreground text-lg mb-8">
+            TikTok for Games. Infinite scrolling, instant playing.
+          </p>
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <button
+              onClick={() => navigate("/feed")}
+              className="group w-full sm:w-auto px-8 py-4 rounded-full gradient-primary font-semibold text-white glow-primary-intense hover:scale-105 transition-transform flex items-center justify-center gap-2"
+            >
+              <Play className="w-5 h-5 fill-white" />
+              Play Now
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </button>
+            
+            <button
+              onClick={() => {}}
+              className="w-full sm:w-auto px-8 py-4 rounded-full glass font-semibold hover:bg-secondary transition-colors"
+            >
+              Add to Home Screen
+            </button>
+          </div>
+          
+          {/* Stats */}
+          <div className="flex items-center justify-center gap-8 sm:gap-12">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="flex items-center justify-center gap-1.5 mb-1">
+                  <stat.icon className="w-4 h-4 text-primary" />
+                  <span className="font-display text-2xl font-bold text-primary text-glow">
+                    {stat.value}
+                  </span>
+                </div>
+                <span className="text-xs text-muted-foreground">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+      
+      <Navbar />
     </div>
   );
 };
