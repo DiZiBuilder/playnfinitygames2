@@ -13,7 +13,7 @@ const Profile = () => {
 
   if (!isLoggedIn) {
     return (
-      <div className="min-h-screen bg-background pb-24">
+      <div className="min-h-screen gradient-purple-page pb-24">
         <div className="flex flex-col items-center justify-center min-h-[80vh] px-6 text-center">
           {/* Avatar placeholder */}
           <div className="w-24 h-24 rounded-full glass flex items-center justify-center mb-6">
@@ -41,7 +41,7 @@ const Profile = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background pb-24">
+    <div className="min-h-screen gradient-purple-page pb-24">
       {/* Header */}
       <header className="glass-strong safe-top">
         <div className="max-w-lg mx-auto px-4 py-6">
