@@ -172,12 +172,10 @@
   .gradient-purple-page {
     background: linear-gradient(
       to bottom,
-      #7c3aed 0%,
-      #6d28d9 20%,
-      #5b21b6 40%,
-      #4c1d95 60%,
-      #3b1673 80%,
-      #1e0f47 100%
+      #2e1065 0%,
+      #1e0a43 40%,
+      #130827 70%,
+      #0a0412 100%
     );
   }
 }

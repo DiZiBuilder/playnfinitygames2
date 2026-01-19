@@ -45,9 +45,6 @@ const Navbar = () => {
                   isActive && "drop-shadow-[0_0_8px_hsl(270_100%_70%)]"
                 )}
               />
-              {isActive && (
-                <div className="absolute bottom-1 w-1 h-1 rounded-full bg-primary glow-primary" />
-              )}
             </button>
           );
         })}
