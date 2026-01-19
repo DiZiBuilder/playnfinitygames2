@@ -149,7 +149,7 @@ const GamePlayer = () => {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 bg-background touch-none"
+      className="fixed inset-0 gradient-purple-page touch-none"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}

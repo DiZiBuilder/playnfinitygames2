@@ -1,19 +1,19 @@
-import { Home, Gamepad2, Search, Heart, User } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 interface NavItem {
-  icon: React.ComponentType<{ className?: string }>;
   label: string;
   path: string;
+  icon: string;
+  activeIcon: string;
 }
 
 const navItems: NavItem[] = [
-  { icon: Home, label: "Home", path: "/" },
-  { icon: Gamepad2, label: "Feed", path: "/feed" },
-  { icon: Search, label: "Explore", path: "/explore" },
-  { icon: Heart, label: "Likes", path: "/likes" },
-  { icon: User, label: "Profile", path: "/profile" },
+  { label: "Home", path: "/", icon: "/nav/home.png", activeIcon: "/nav/home-active.png" },
+  { label: "Feed", path: "/feed", icon: "/nav/feed.png", activeIcon: "/nav/feed-active.png" },
+  { label: "Explore", path: "/explore", icon: "/nav/explore.png", activeIcon: "/nav/explore-active.png" },
+  { label: "Likes", path: "/likes", icon: "/nav/likes.png", activeIcon: "/nav/likes-active.png" },
+  { label: "Profile", path: "/profile", icon: "/nav/profile.png", activeIcon: "/nav/profile-active.png" },
 ];
 
 const Navbar = () => {
@@ -25,7 +25,6 @@ const Navbar = () => {
       <div className="flex items-center justify-around h-16 max-w-md mx-auto px-4">
         {navItems.map((item) => {
           const isActive = location.pathname === item.path;
-          const Icon = item.icon;
           
           return (
             <button
@@ -33,26 +32,19 @@ const Navbar = () => {
               onClick={() => navigate(item.path)}
               className={cn(
                 "flex flex-col items-center justify-center w-16 h-full transition-all duration-300",
-                "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg",
-                isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
               )}
               aria-label={item.label}
               aria-current={isActive ? "page" : undefined}
             >
-              <Icon 
+              <img 
+                src={isActive ? item.activeIcon : item.icon}
+                alt={item.label}
                 className={cn(
-                  "w-6 h-6 transition-all duration-300",
-                  isActive && "glow-primary-intense drop-shadow-[0_0_8px_hsl(var(--glow))]"
-                )} 
-              />
-              <span 
-                className={cn(
-                  "text-[10px] mt-1 font-medium transition-all duration-300",
-                  isActive && "text-glow"
+                  "w-7 h-7 transition-all duration-300",
+                  isActive && "drop-shadow-[0_0_8px_hsl(270_100%_70%)]"
                 )}
-              >
-                {item.label}
-              </span>
+              />
               {isActive && (
                 <div className="absolute bottom-1 w-1 h-1 rounded-full bg-primary glow-primary" />
               )}

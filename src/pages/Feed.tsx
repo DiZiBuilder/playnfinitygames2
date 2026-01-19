@@ -22,7 +22,7 @@ const Feed = () => {
   const displayedGames = getGames();
 
   return (
-    <div className="min-h-screen bg-background pb-24">
+    <div className="min-h-screen gradient-purple-page pb-24">
       {/* Header */}
       <header className="sticky top-0 z-40 glass-strong safe-top">
         <div className="max-w-lg mx-auto px-4 pt-4">

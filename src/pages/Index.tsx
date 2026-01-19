@@ -13,21 +13,32 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      {/* Video Background */}
+      <div className="fixed inset-0 overflow-hidden z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero-bg.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-background/70" />
+      </div>
+      
       {/* Hero Section */}
-      <div className="relative flex-1 flex flex-col items-center justify-center px-6 pb-24">
-        {/* Background gradient */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px]" />
-          <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px]" />
-        </div>
-        
+      <div className="relative flex-1 flex flex-col items-center justify-center px-6 pb-24 z-10">
         {/* Content */}
         <div className="relative z-10 text-center max-w-lg mx-auto">
           {/* Logo */}
           <div className="mb-6 inline-flex items-center justify-center">
-            <div className="w-16 h-16 rounded-2xl gradient-primary flex items-center justify-center glow-primary-intense animate-float">
-              <span className="font-display text-3xl font-bold text-white">P</span>
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="Playnfinity Logo" 
+              className="w-20 h-20 animate-float"
+            />
           </div>
           
           {/* Headline */}
@@ -42,7 +53,7 @@ const Index = () => {
             TikTok for Games. Infinite scrolling, instant playing.
           </p>
           
-          {/* CTA Buttons */}
+          {/* CTA Button */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <button
               onClick={() => navigate("/feed")}
@@ -51,13 +62,6 @@ const Index = () => {
               <Play className="w-5 h-5 fill-white" />
               Play Now
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </button>
-            
-            <button
-              onClick={() => {}}
-              className="w-full sm:w-auto px-8 py-4 rounded-full glass font-semibold hover:bg-secondary transition-colors"
-            >
-              Add to Home Screen
             </button>
           </div>
           
