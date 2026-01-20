@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 bg-background/25 backdrop-blur-md border-t border-white/10 safe-bottom">
-      <div className="flex items-center justify-around h-10 max-w-md mx-auto px-4">
+      <div className="flex items-center justify-around h-10 max-w-md mx-auto px-4 py-2">
         {navItems.map((item) => {
           const isActive = location.pathname === item.path;
           

@@ -42,15 +42,15 @@ const Index = () => {
           </div>
           
           {/* Headline */}
-          <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4 leading-tight">
-            <div className="whitespace-nowrap">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+            <div className="sm:whitespace-nowrap">
               <span className="text-[#ADE0FF] drop-shadow-[0_0_12px_rgba(173,224,255,0.6)]">Playnfinity</span>
               <span className="text-foreground"> — Play. Scroll.</span>
             </div>
             <span className="text-foreground">Play some more.</span>
           </h1>
           
-          <p className="text-muted-foreground text-lg mb-8">
+          <p className="text-muted-foreground text-base sm:text-lg mb-8">
             TikTok for Games. Infinite scrolling, instant playing.
           </p>
           
@@ -58,7 +58,7 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <button
               onClick={() => navigate("/feed")}
-              className="group w-full sm:w-auto px-8 py-4 rounded-full gradient-primary font-semibold text-white glow-primary-intense hover:scale-105 transition-transform flex items-center justify-center gap-2"
+              className="group w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-full gradient-primary font-semibold text-white glow-primary-intense hover:scale-105 transition-transform flex items-center justify-center gap-2"
             >
               <Play className="w-5 h-5 fill-white" />
               Play Now
