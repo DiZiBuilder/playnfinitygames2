@@ -41,7 +41,7 @@ const Navbar = () => {
                 src={isActive ? item.activeIcon : item.icon}
                 alt={item.label}
                 className={cn(
-                  "w-6 h-6 transition-all duration-300",
+                  "w-7 h-7 transition-all duration-300",
                   isActive && "drop-shadow-[0_0_8px_hsl(270_100%_70%)]"
                 )}
               />
