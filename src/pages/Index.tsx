@@ -44,7 +44,7 @@ const Index = () => {
           {/* Headline */}
           <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4 leading-tight">
             <div className="whitespace-nowrap">
-              <span className="text-primary text-glow">Playnfinity</span>
+              <span className="text-[#ADE0FF] drop-shadow-[0_0_12px_rgba(173,224,255,0.6)]">Playnfinity</span>
               <span className="text-foreground"> — Play. Scroll.</span>
             </div>
             <span className="text-foreground">Play some more.</span>
