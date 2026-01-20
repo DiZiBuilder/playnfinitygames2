@@ -24,8 +24,8 @@ const Index = () => {
         >
           <source src="/hero-bg.mp4" type="video/mp4" />
         </video>
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-background/70" />
+        {/* Dark overlay for readability - lighter to show video */}
+        <div className="absolute inset-0 bg-background/50" />
       </div>
       
       {/* Hero Section */}
@@ -43,9 +43,10 @@ const Index = () => {
           
           {/* Headline */}
           <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4 leading-tight">
-            <span className="text-primary text-glow">Playnfinity</span>
-            <span className="text-foreground"> — Play. Scroll.</span>
-            <br />
+            <div className="whitespace-nowrap">
+              <span className="text-primary text-glow">Playnfinity</span>
+              <span className="text-foreground"> — Play. Scroll.</span>
+            </div>
             <span className="text-foreground">Play some more.</span>
           </h1>
           

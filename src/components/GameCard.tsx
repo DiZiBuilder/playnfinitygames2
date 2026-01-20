@@ -75,7 +75,7 @@ const GameCard = ({ game, index }: GameCardProps) => {
           {game.tags.slice(0, 2).map((tag) => (
             <span
               key={tag}
-              className="px-2 py-0.5 text-[10px] font-medium rounded-full bg-primary/20 text-primary border border-primary/30"
+              className="px-2 py-0.5 text-[10px] font-medium rounded-full bg-black/60 text-white backdrop-blur-sm border border-white/20"
             >
               {tag}
             </span>
