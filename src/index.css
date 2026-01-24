@@ -302,3 +302,27 @@ body {
   -webkit-user-select: text;
   user-select: text;
 }
+
+/* Custom scrollbar — exact old feed.html style */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.6);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a855f7;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(168, 85, 247, 0.6) transparent;
+}
